@@ -1,0 +1,10 @@
+@(user: User)
+
+@main(user.name+"''s Home"){
+    <div class="container-fluid form-actions span8">
+    <p>Hi <strong>@user.name!</strong> You are succesfully logged in.</p>
+    @if(user.name.equals("admin")){
+        <a class="btn btn-danger" style="float:right" href="/admin/delete">DELETE THE DATABASE</a>
+    }
+    </div>
+}

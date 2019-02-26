@@ -1,0 +1,18 @@
+@(users: List[User])(len: Integer)
+
+@main("User database"){
+    <table >
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>password</th>
+        </tr>
+        @for(i <- 0 until len) {
+            <tr>
+                <td>@(i+1)</td>
+                <td>@users.get(i).name</td>
+                <td>@users.get(i).pwd</td>
+            </tr >
+        }
+    </table>
+}

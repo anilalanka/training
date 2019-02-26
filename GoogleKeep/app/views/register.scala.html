@@ -1,0 +1,19 @@
+@(userForm: Form[User])
+
+@main("Register Page"){
+    @if(userForm.value.isDefined){
+        <p>Hi <strong>Mr. @userForm.get.name</strong>. You are now registered on Google Keep!</p>
+    }else {
+        <div class="container">
+            <div class="form-actions span4">
+        <h3>Welcome to Register page</h3>
+        <p>Please fill the details:</p>
+        @helper.form(action = routes.Register.registeredNow()){
+            @helper.inputText(userForm("name"),'_label->"Username")
+            @helper.inputPassword(userForm("pwd"),'_label->"Password")
+            <input class="btn btn-primary" type="submit" name="submit" value="Create Account" />
+        }
+    </div>
+        </div>
+    }
+}
